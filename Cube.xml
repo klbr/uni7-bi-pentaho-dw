@@ -1,0 +1,106 @@
+<Schema name="DW_ERPDEMO">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Tempo">
+    <Hierarchy name="Tempo" visible="true" hasAll="true" primaryKey="dky_tempo">
+      <Table name="dim_tempo" schema="public">
+      </Table>
+      <Level name="Ano" visible="true" table="dim_tempo" column="ano" nameColumn="ano" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Mes" visible="true" table="dim_tempo" column="mes" nameColumn="mes" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Pessoa">
+    <Hierarchy name="Pessoa" visible="true" hasAll="true" primaryKey="dky_pessoa">
+      <Table name="dim_pessoa" schema="public">
+      </Table>
+      <Level name="Pessoa" visible="true" column="nome_pessoa" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Bairro" visible="true" column="bairro_pessoa" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Cidade" visible="true" column="cidade_pessoa" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Estado" visible="true" column="uf_pessoa" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Loja">
+    <Hierarchy name="Loja" visible="true" hasAll="true" primaryKey="dky_loja">
+      <Table name="dim_loja" schema="public">
+      </Table>
+      <Level name="Loja" visible="true" column="nome_loja" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Bairro" visible="true" column="bairro_loja" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Cidade" visible="true" column="cidade_loja" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Produto">
+    <Hierarchy name="Produto" visible="true" hasAll="true" primaryKey="dky_item">
+      <Table name="dim_item" schema="public">
+      </Table>
+      <Level name="Produto" visible="true" column="descricao_item" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Codigo" visible="true" column="cod_item" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Marca" visible="true" column="marca_item" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Grupo" visible="true" column="grupo_item" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="FormaPagamento">
+    <Hierarchy name="FormaPagamento" visible="true" hasAll="true" primaryKey="dky_forma_pagamento">
+      <Table name="dim_forma_pagamento" schema="public">
+      </Table>
+      <Level name="FormaPagamento" visible="true" column="descricao_forma_pagamento" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="TipoPagamento">
+    <Hierarchy name="TipoPagamento" visible="true" hasAll="true" primaryKey="dky_tipo_pagamento">
+      <Table name="dim_tipo_pagamento" schema="public">
+      </Table>
+      <Level name="TipoPagamento" visible="true" column="descricao_tipo_pagamento" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Vendas" visible="true" cache="true" enabled="true">
+    <Table name="fato_vendas" schema="public">
+    </Table>
+    <DimensionUsage source="Tempo" name="Tempo" visible="true" foreignKey="dky_tempo" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Pessoa" name="Cliente" visible="true" foreignKey="dky_cliente" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Pessoa" name="Vendedor" visible="true" foreignKey="dky_vendedor" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Loja" name="Loja" visible="true" foreignKey="dky_loja" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Produto" name="Produto" visible="true" foreignKey="dky_item" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Valor" column="valor_fatura_item" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Quantidade" column="quantidade_item" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Compras" visible="true" cache="true" enabled="true">
+    <Table name="fato_compras" schema="public">
+    </Table>
+    <DimensionUsage source="Tempo" name="Tempo" visible="true" foreignKey="dky_tempo" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Pessoa" name="Fornecedor" visible="true" foreignKey="dky_pessoa" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Loja" name="Loja" visible="true" foreignKey="dky_loja" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Produto" name="Produto" visible="true" foreignKey="dky_item" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="FormaPagamento" name="FormaPagamento" visible="true" foreignKey="dky_forma_pagamento" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="TipoPagamento" name="TipoPagamento" visible="true" foreignKey="dky_tipo_pagamento" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Quantidade" column="quantidade" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Valor" column="valor_custo" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
