@@ -2,9 +2,9 @@
 <transformation>
   <info>
     <name>SalvarDimensoesVendas</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
     <directory>/</directory>
@@ -12,12 +12,12 @@
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -42,37 +42,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -126,11 +126,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -208,10 +208,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -274,10 +274,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -350,10 +350,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -402,9 +402,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -415,7 +415,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -445,9 +445,9 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -496,9 +496,9 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -563,24 +563,24 @@
   <step>
     <name>DLoja</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
     <sql>select  distinct     
-   e.emp_codemp,
-   upper(e.emp_razsoc) as emp_razsoc,
+  e.emp_codemp,
+   e.emp_razsoc,
    l.loj_codloj,
-   l.loj_denloj,
-   upper(l.loj_endloj) as loj_endloj,
-   upper(l.loj_bailoj) as loj_bailoj,
-   upper(l.loj_ufloj) as loj_ufloj,
-   upper(l.loj_cidloj) as loj_cidloj,
+   l.Loj_denloj,
+   l.loj_endloj,
+   l.loj_bailoj,
+   l.loj_ufloj,
+   l.loj_cidloj,
    l.loj_ceploj    
 from
    fatura f 
@@ -610,11 +610,11 @@ from
       on ip.itm_grupo = g.grp_codgrp
 </sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -630,26 +630,26 @@ from
   <step>
     <name>DPessoa</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
     <sql>select distinct 
   pes_codpes, pes_nome, pes_endere, pes_bairro, pes_cidade, pes_uf, pes_cep
   from  (select   
   DISTINCT
-  upper(coalesce(p.pes_codpes,'N/A')) as pes_codpes, 
-  upper(coalesce(p.pes_nome,'N/A')) as pes_nome , 
-  upper(coalesce(p.pes_endere,'N/A')) as pes_endere, 
-  upper(coalesce(p.pes_bairro,'N/A')) as pes_bairro , 
-  upper(coalesce(p.pes_cidade,'N/A')) as pes_cidade, 
-  upper(coalesce(p.pes_uf,'N/A')) as pes_uf, 
-  upper(coalesce(p.pes_cep,'N/A')) as pes_cep
+  coalesce(p.pes_codpes,'N/A') as pes_codpes, 
+  coalesce(p.pes_nome,'N/A') as pes_nome , 
+  coalesce(p.pes_endere,'N/A') as pes_endere, 
+  coalesce(p.pes_bairro,'N/A') as pes_bairro , 
+  coalesce(p.pes_cidade,'N/A') as pes_cidade, 
+  coalesce(p.pes_uf,'N/A') as pes_uf, 
+  coalesce(p.pes_cep,'N/A')as pes_cep
 from
    fatura f 
    JOIN
@@ -680,13 +680,13 @@ from
   union
 
   select distinct    
-  upper(coalesce(p2.pes_codpes,'N/A')) as pes_codpes , 
-  upper(coalesce(p2.pes_nome,'N/A')) as pes_nome, 
-  upper(coalesce(p2.pes_endere,'N/A')) as pes_endere, 
-  upper(coalesce(p2.pes_bairro,'N/A')) as pes_bairro, 
-  upper(coalesce(p2.pes_cidade,'N/A')) as pes_cidade, 
-  upper(coalesce(p2.pes_uf,'N/A')) as pes_uf, 
-  upper(coalesce(p2.pes_cep,'N/A')) as pes_cep
+  coalesce(p2.pes_codpes,'N/A') as pes_codpes , 
+  coalesce(p2.pes_nome,'N/A') as pes_nome, 
+  coalesce(p2.pes_endere,'N/A') as pes_endere, 
+  coalesce(p2.pes_bairro,'N/A') as pes_bairro, 
+  coalesce(p2.pes_cidade,'N/A') as pes_cidade, 
+  coalesce(p2.pes_uf,'N/A') as pes_uf, 
+  coalesce(p2.pes_cep,'N/A')as pes_cep
 from
    fatura f 
    JOIN
@@ -718,11 +718,11 @@ from
 	
 ORDER BY pes_codpes</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -730,7 +730,7 @@ ORDER BY pes_codpes</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
+      <xloc>144</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -738,21 +738,21 @@ ORDER BY pes_codpes</sql>
   <step>
     <name>DProduto</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
     <sql>select distinct 
    ip.itm_item,
-   upper(coalesce(g.grp_dscgrp,'N/A')) as grp_dscgrp,
-   upper(coalesce(ip.itm_descri,'N/A')) as itm_descri,
-   upper(coalesce(ip.itm_unidade,'N/A')) as itm_unidade,  
-   upper(case when ip.itm_marca = '' or ip.itm_marca is null then 'N/A' else ip.itm_marca end) as itm_marca
+   coalesce(g.grp_dscgrp,'N/A') as grp_dscgrp,
+   coalesce(ip.itm_descri,'N/A') as itm_descri,
+   coalesce(ip.itm_unidade,'N/A') as itm_unidade,  
+  case when ip.itm_marca = '' or ip.itm_marca is null then 'N/A' else ip.itm_marca end as itm_marca
 from
    fatura f 
    JOIN
@@ -768,11 +768,11 @@ from
       on ip.itm_grupo = g.grp_codgrp
 </sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -788,13 +788,13 @@ from
   <step>
     <name>DTempo</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
     <sql>select distinct 
@@ -809,11 +809,11 @@ from
 order by 
 	cod_data</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -829,16 +829,16 @@ order by
   <step>
     <name>outLoja</name>
     <type>TableOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
-    <schema/>
+    <schema />
     <table>dim_loja</table>
     <commit>1000</commit>
     <truncate>N</truncate>
@@ -846,14 +846,14 @@ order by
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
+    <partitioning_field />
     <partitioning_daily>N</partitioning_daily>
     <partitioning_monthly>Y</partitioning_monthly>
     <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
+    <tablename_field />
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>N</return_keys>
-    <return_field/>
+    <return_field />
     <fields>
       <field>
         <column_name>cod_empresa</column_name>
@@ -892,7 +892,7 @@ order by
         <stream_name>loj_ceploj</stream_name>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -908,13 +908,13 @@ order by
   <step>
     <name>outPessoa</name>
     <type>TableOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
     <schema>public</schema>
@@ -925,14 +925,14 @@ order by
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
+    <partitioning_field />
     <partitioning_daily>N</partitioning_daily>
     <partitioning_monthly>Y</partitioning_monthly>
     <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
+    <tablename_field />
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>N</return_keys>
-    <return_field/>
+    <return_field />
     <fields>
       <field>
         <column_name>cod_pessoa</column_name>
@@ -963,7 +963,7 @@ order by
         <stream_name>pes_cep</stream_name>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -971,7 +971,7 @@ order by
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>336</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -979,16 +979,16 @@ order by
   <step>
     <name>outProduto</name>
     <type>TableOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
-    <schema/>
+    <schema />
     <table>dim_item</table>
     <commit>1000</commit>
     <truncate>N</truncate>
@@ -996,14 +996,14 @@ order by
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
+    <partitioning_field />
     <partitioning_daily>N</partitioning_daily>
     <partitioning_monthly>Y</partitioning_monthly>
     <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
+    <tablename_field />
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>N</return_keys>
-    <return_field/>
+    <return_field />
     <fields>
       <field>
         <column_name>cod_item</column_name>
@@ -1026,7 +1026,7 @@ order by
         <stream_name>itm_marca</stream_name>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1042,16 +1042,16 @@ order by
   <step>
     <name>outTempo</name>
     <type>TableOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
-    <schema/>
+    <schema />
     <table>dim_tempo</table>
     <commit>1000</commit>
     <truncate>N</truncate>
@@ -1059,14 +1059,14 @@ order by
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
+    <partitioning_field />
     <partitioning_daily>N</partitioning_daily>
     <partitioning_monthly>Y</partitioning_monthly>
     <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
+    <tablename_field />
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>N</return_keys>
-    <return_field/>
+    <return_field />
     <fields>
       <field>
         <column_name>cod_data</column_name>
@@ -1093,7 +1093,7 @@ order by
         <stream_name>data</stream_name>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>

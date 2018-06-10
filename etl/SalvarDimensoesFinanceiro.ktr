@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>SalvarDimensoesCompras</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <name>SalvarDimensoesFinanceiro</name>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -41,37 +42,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -125,11 +126,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -207,10 +208,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -273,10 +274,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -349,10 +350,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -401,9 +402,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -414,7 +415,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -444,9 +445,9 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -495,9 +496,9 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -539,23 +540,13 @@
   </connection>
   <order>
     <hop>
-      <from>dFormaPagamento</from>
-      <to>outFormaPagamento</to>
+      <from>dNatureza_Despesa</from>
+      <to>outNaturezaDesp</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dTipoPagamento </from>
-      <to>outTipoPagamento</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dPessoaCompra</from>
-      <to>outPessoaCompra</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dProdutoCompras</from>
-      <to>outItem</to>
+      <from>dPessoaFinanceiro</from>
+      <to>outPessoaFinanceiro</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -563,43 +554,89 @@
       <to>outData</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>dFormaPagamento</from>
+      <to>outFormaPagamente</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dFonteRecurso</from>
+      <to>outFonteRecurso</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Data Grid</from>
+      <to>outSituacao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DLoja</from>
+      <to>outLoja</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>DTempo</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
-    <sql>select  
-   cast(to_char( mov.mov_datmov, 'yyyyMMDD') as integer) as cod_data,
-	cast(to_char( mov.mov_datmov, 'yyyy') as integer) as ano,
-	cast(to_char( mov.mov_datmov, 'MM') as integer) as mes,
-	cast(to_char( mov.mov_datmov, 'DD') as integer) as dia,
-	cast(to_char( mov.mov_datmov, 'D') as integer) as dia_semana,
-    mov.mov_datmov  as data
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp
-order by 
-	mov.mov_datmov </sql>
+    <sql>select distinct cod_data, ano, mes, dia, dia_semana, data from
+( 
+  select   
+    cast(to_char( cnt_datven, 'yyyyMMDD') as integer) as cod_data,
+  	cast(to_char( cnt_datven, 'yyyy') as integer) as ano,
+  	cast(to_char(cnt_datven, 'MM') as integer) as mes,
+  	cast(to_char( cnt_datven, 'DD') as integer) as dia,
+  	cast(to_char( cnt_datven, 'D') as integer) as dia_semana,
+    cnt_datven  as data
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+  where cnt_tipcon in ('P', 'R')
+
+  union ALL
+
+  select    
+     cast(to_char( cnt_datpag, 'yyyyMMDD') as integer) as cod_data,
+  	cast(to_char( cnt_datpag, 'yyyy') as integer) as ano,
+  	cast(to_char(cnt_datpag, 'MM') as integer) as mes,
+  	cast(to_char( cnt_datpag, 'DD') as integer) as dia,
+  	cast(to_char( cnt_datpag, 'D') as integer) as dia_semana,
+    cnt_datpag  as data
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj
+  where cnt_tipcon in ('P', 'R') 
+  ) T
+  where 
+     data > '30-12-1899'
+  order by data
+
+
+
+
+
+
+</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -615,36 +652,55 @@ order by
   <step>
     <name>dFormaPagamento</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
-    <sql>select  
-   distinct
-    mov.mov_forpag, 
-    fpg.fpg_desfpg 
+    <sql>select  DISTINCT cnt_forpag, fpg_desfpg from
+(
+  select
+    cnt_tipcon,
+    cnt_datven as data_conta,
+    case when cnt_forpag = '' or cnt_forpag is null then 'N/A' else cnt_forpag end as cnt_forpag,    
+    coalesce(fpg.fpg_desfpg ,'N/A') as fpg_desfpg 
     
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+
+  union ALL
+
+  select 
+     cnt_tipcon,
+    cnt_datven as data_conta,
+    case when cnt_forpag = '' or cnt_forpag is null then 'N/A' else cnt_forpag end as cnt_forpag,        
+    coalesce(fpg.fpg_desfpg ,'N/A') as fpg_desfpg   
     
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+  )T
+  where 
+    cnt_tipcon in ('P', 'R') and data_conta > '30-12-1899'
+ 
+</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -652,46 +708,76 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
+      <xloc>32</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>dPessoaCompra</name>
+    <name>dPessoaFinanceiro</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
-    <sql>select  distinct
+    <sql>select DISTINCT 
+    cnt_codpes,     
+coalesce(pes_nome,'N/A') as pes_nome, 
+coalesce(pes_endere,'N/A') as pes_endere,
+coalesce(pes_bairro,'N/A') as pes_bairro,
+coalesce(pes_cidade,'N/A') as pes_cidade,
+coalesce(pes_uf,'N/A') as pes_uf,
+coalesce(pes_cep,'N/A') as pes_cep
+ from
+(
+  select
+  cnt_tipcon,  
+  cnt_datven as data_conta, 
+  cnt_codpes,     
+  p.pes_nome,  p.pes_endere, p.pes_bairro, p.pes_cidade, p.pes_uf, p.pes_cep
     
-    mov.mov_codpes, 
-    
-    pes.pes_codpes, pes.pes_nome,  pes.pes_endere, pes.pes_bairro, pes.pes_cidade, pes.pes_uf, pes.pes_cep
-    
-   
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+
+  union ALL
+
+  select
+    cnt_tipcon, 
+    cnt_datpag as data_conta,   
+   cnt_codpes,     
+  p.pes_nome,  p.pes_endere, p.pes_bairro, p.pes_cidade, p.pes_uf, p.pes_cep
+
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+  )T
+  where 
+    cnt_tipcon in ('P', 'R') and data_conta > '30-12-1899'
+  
+
+
+
+
+
 </sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -705,39 +791,61 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp
     </GUI>
   </step>
   <step>
-    <name>dProdutoCompras</name>
+    <name>dFonteRecurso</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
-    <sql>select 
-	distinct  
-     imv.imv_item itm_item, 
-	coalesce(itm.itm_descri, 'N/A') itm_descri, 
-	coalesce(itm.itm_unidade, 'N/A') itm_unidade, 
-	coalesce(itm.itm_marca, 'N/A') itm_marca,
-    coalesce(grp.grp_dscgrp, 'N/A') grp_dscgrp
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
+    <sql>select distinct cnt_recurs, tfo_nomfon from
+(
+  select 
+   cnt_tipcon, 
+    cnt_datven as data_conta,   
+    case when cnt_recurs = '' or cnt_recurs is null then 'N/A' else cnt_recurs end as cnt_recurs,  
+    coalesce(tfo_nomfon,'N/A') as tfo_nomfon    
+    
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+
+  union ALL
+
+  select 
+     cnt_tipcon, 
+    cnt_datpag as data_conta,   
+      case when cnt_recurs = '' or cnt_recurs is null then 'N/A' else cnt_recurs end as cnt_recurs,  
+    coalesce(tfo_nomfon,'N/A') as tfo_nomfon    
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+  )T
+  where 
+    cnt_tipcon in ('P', 'R') and data_conta > '30-12-1899'
+
+
+
+
+
+
+</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -751,37 +859,65 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
     </GUI>
   </step>
   <step>
-    <name>dTipoPagamento </name>
+    <name>dNatureza_Despesa</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
-    <sql>select 
-     distinct
-     mov.mov_tippag, 
-    tpg.tpg_destpg
+    <sql>select DISTINCT cnt_natdesp, tnd_nomnat from
+(
+  select 
+     cnt_tipcon,         
+    cnt_datven as data_conta,  
+    coalesce(tnd_nomnat,'N/A') as tnd_nomnat , 
+    case when cnt_natdesp = '' or cnt_natdesp is null then 'N/A' else cnt_natdesp end as cnt_natdesp   
+     
+   
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+
+  union ALL
+
+  select 
+     cnt_tipcon, 
+    cnt_datpag as data_conta, 
+    coalesce(tnd_nomnat,'N/A') as tnd_nomnat ,  
+    case when cnt_natdesp = '' or cnt_natdesp is null then 'N/A' else cnt_natdesp end as cnt_natdesp    
+
     
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
+    
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+  )T
+  where 
+    cnt_tipcon in ('P', 'R') and data_conta > '30-12-1899'
+
+
+
+
+
+
+</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -797,13 +933,13 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
   <step>
     <name>outData</name>
     <type>InsertUpdate</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
     <commit>100</commit>
@@ -815,70 +951,70 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
         <name>cod_data</name>
         <field>cod_data</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
         <name>ano</name>
         <field>ano</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
         <name>mes</name>
         <field>mes</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
         <name>dia</name>
         <field>dia</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
         <name>dia_semana</name>
         <field>dia_semana</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
         <name>data</name>
         <field>data</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <value>
         <name>cod_data</name>
         <rename>cod_data</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>ano</name>
         <rename>ano</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>mes</name>
         <rename>mes</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>dia</name>
         <rename>dia</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>dia_semana</name>
         <rename>dia_semana</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>data</name>
         <rename>data</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -892,152 +1028,15 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
     </GUI>
   </step>
   <step>
-    <name>outFormaPagamento</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <schema>public</schema>
-    <table>dim_forma_pagamento</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>cod_forma_pagamento</column_name>
-        <stream_name>mov_forpag</stream_name>
-      </field>
-      <field>
-        <column_name>descricao_forma_pagamento</column_name>
-        <stream_name>fpg_desfpg</stream_name>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>outItem</name>
+    <name>outPessoaFinanceiro</name>
     <type>InsertUpdate</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>public</schema>
-      <table>dim_item</table>
-      <key>
-        <name>itm_item</name>
-        <field>cod_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>itm_descri</name>
-        <field>descricao_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>grp_dscgrp</name>
-        <field>grupo_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>itm_marca</name>
-        <field>marca_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>itm_unidade</name>
-        <field>um_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>cod_item</name>
-        <rename>itm_item</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>descricao_item</name>
-        <rename>itm_descri</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>um_item</name>
-        <rename>itm_unidade</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>marca_item</name>
-        <rename>itm_marca</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>grupo_item</name>
-        <rename>grp_dscgrp</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>outPessoaCompra</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
     <commit>100</commit>
@@ -1046,51 +1045,51 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       <schema>public</schema>
       <table>dim_pessoa</table>
       <key>
-        <name>mov_codpes</name>
+        <name>cnt_codpes</name>
         <field>cod_pessoa</field>
         <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_bairro</name>
-        <field>bairro_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_cep</name>
-        <field>cep_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_cidade</name>
-        <field>cidade_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_endere</name>
-        <field>endereco_pessoa</field>
-        <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
         <name>pes_nome</name>
         <field>nome_pessoa</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
       </key>
       <key>
-        <name>pes_nome</name>
+        <name>pes_endere</name>
+        <field>endereco_pessoa</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>pes_bairro</name>
+        <field>bairro_pessoa</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>pes_cidade</name>
+        <field>cidade_pessoa</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>pes_uf</name>
         <field>uf_pessoa</field>
         <condition>=</condition>
-        <name2/>
+        <name2 />
+      </key>
+      <key>
+        <name>pes_cep</name>
+        <field>cep_pessoa</field>
+        <condition>=</condition>
+        <name2 />
       </key>
       <value>
-        <name>cod_pessoa</name>
-        <rename>pes_codpes</rename>
-        <update>N</update>
+        <name>uf_pessoa</name>
+        <rename>pes_uf</rename>
+        <update>Y</update>
       </value>
       <value>
         <name>nome_pessoa</name>
@@ -1103,9 +1102,9 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
         <update>Y</update>
       </value>
       <value>
-        <name>bairro_pessoa</name>
-        <rename>pes_bairro</rename>
-        <update>Y</update>
+        <name>cod_pessoa</name>
+        <rename>cnt_codpes</rename>
+        <update>N</update>
       </value>
       <value>
         <name>cidade_pessoa</name>
@@ -1113,17 +1112,17 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
         <update>Y</update>
       </value>
       <value>
-        <name>uf_pessoa</name>
-        <rename>pes_uf</rename>
-        <update>Y</update>
-      </value>
-      <value>
         <name>cep_pessoa</name>
         <rename>pes_cep</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>bairro_pessoa</name>
+        <rename>pes_bairro</rename>
+        <update>Y</update>
+      </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1137,44 +1136,44 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
     </GUI>
   </step>
   <step>
-    <name>outTipoPagamento</name>
+    <name>outNaturezaDesp</name>
     <type>TableOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>DW_ERPDemo</connection>
-    <schema>public</schema>
-    <table>dim_tipo_pagamento</table>
+    <schema />
+    <table>dim_natureza_despesa</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
+    <partitioning_field />
     <partitioning_daily>N</partitioning_daily>
     <partitioning_monthly>Y</partitioning_monthly>
     <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
+    <tablename_field />
     <tablename_in_table>Y</tablename_in_table>
     <return_keys>N</return_keys>
-    <return_field/>
+    <return_field />
     <fields>
       <field>
-        <column_name>cod_tipo_pagamento</column_name>
-        <stream_name>mov_tippag</stream_name>
+        <column_name>cod_nat</column_name>
+        <stream_name>cnt_natdesp</stream_name>
       </field>
       <field>
-        <column_name>descricao_tipo_pagamento</column_name>
-        <stream_name>tpg_destpg</stream_name>
+        <column_name>descricao_natureza</column_name>
+        <stream_name>tnd_nomnat</stream_name>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1184,6 +1183,436 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
     <GUI>
       <xloc>288</xloc>
       <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>outFormaPagamente</name>
+    <type>InsertUpdate</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>dim_forma_pagamento</table>
+      <key>
+        <name>cnt_forpag</name>
+        <field>cod_forma_pagamento</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>fpg_desfpg</name>
+        <field>descricao_forma_pagamento</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <value>
+        <name>cod_forma_pagamento</name>
+        <rename>cnt_forpag</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>descricao_forma_pagamento</name>
+        <rename>fpg_desfpg</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>outFonteRecurso</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <schema>public</schema>
+    <table>dim_fonte_recurso</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>cod_fonte</column_name>
+        <stream_name>cnt_recurs</stream_name>
+      </field>
+      <field>
+        <column_name>descricao_fonte_recurso</column_name>
+        <stream_name>tfo_nomfon</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Data Grid</name>
+    <type>DataGrid</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>tipo</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>situacao</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line>
+        <item>P</item>
+        <item>P</item>
+      </line>
+      <line>
+        <item>P</item>
+        <item>A</item>
+      </line>
+      <line>
+        <item>R</item>
+        <item>P</item>
+      </line>
+      <line>
+        <item>R</item>
+        <item>A</item>
+      </line>
+    </data>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>32</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>outSituacao</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <schema>public</schema>
+    <table>dim_situacao</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>tipo</column_name>
+        <stream_name>tipo</stream_name>
+      </field>
+      <field>
+        <column_name>situacao</column_name>
+        <stream_name>situacao</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DLoja</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>ERPDEMO</connection>
+    <sql>select DISTINCT 
+ 
+  case when cnt_loja = '' or cnt_loja is null then 'N/A' else cnt_loja end as cnt_loja,  
+  case when cnt_codemp = '' or cnt_codemp is null then 'N/A' else cnt_codemp end as cnt_codemp, 
+  case when emp_razsoc = '' or emp_razsoc is null then 'N/A' else emp_razsoc end as emp_razsoc,  
+   
+  coalesce(Loj_denloj,'N/A') as Loj_denloj, 
+  coalesce(loj_endloj,'N/A') as loj_endloj, 
+  coalesce(loj_bailoj,'N/A') as loj_bailoj, 
+  coalesce(loj_ufloj,'N/A') as loj_ufloj, 
+  coalesce(loj_cidloj,'N/A') as loj_cidloj, 
+  coalesce(loj_ceploj,'N/A') as loj_ceploj
+   from
+(
+  select 
+    'A' as st, cnt_tipcon,  cnt_codemp,   cnt_loja,
+    cnt_datven as data_conta,       
+    l.Loj_denloj, l.loj_endloj, l.loj_bailoj, l.loj_ufloj, l.loj_cidloj, l.loj_ceploj, emp_razsoc
+
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+      left JOIN empresa on emp_codemp = cnt_codemp
+
+  union ALL
+
+  select 
+    'F' as st, cnt_tipcon,  cnt_codemp,   cnt_loja,
+    cnt_datpag as data_conta,       
+     l.Loj_denloj, l.loj_endloj, l.loj_bailoj, l.loj_ufloj, l.loj_cidloj, l.loj_ceploj, emp_razsoc
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+      left JOIN empresa on emp_codemp = cnt_codemp
+  )T
+  where 
+    cnt_tipcon in ('P', 'R') and data_conta > '30-12-1899'
+
+
+
+
+
+</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>32</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>outLoja</name>
+    <type>InsertUpdate</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>public</schema>
+      <table>dim_loja</table>
+      <key>
+        <name>cnt_codemp</name>
+        <field>cod_empresa</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>emp_razsoc</name>
+        <field>razao_social_empresa</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>cnt_loja</name>
+        <field>cod_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>loj_denloj</name>
+        <field>nome_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>loj_endloj</name>
+        <field>endereco_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>loj_bailoj</name>
+        <field>bairro_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>loj_ufloj</name>
+        <field>uf_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>loj_cidloj</name>
+        <field>cidade_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>loj_ceploj</name>
+        <field>cep_loja</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <value>
+        <name>cod_loja</name>
+        <rename>cnt_loja</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>cod_empresa</name>
+        <rename>cnt_codemp</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>razao_social_empresa</name>
+        <rename>emp_razsoc</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>nome_loja</name>
+        <rename>loj_denloj</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>endereco_loja</name>
+        <rename>loj_endloj</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>bairro_loja</name>
+        <rename>loj_bailoj</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>uf_loja</name>
+        <rename>loj_ufloj</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>cidade_loja</name>
+        <rename>loj_cidloj</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>cep_loja</name>
+        <rename>loj_ceploj</rename>
+        <update>N</update>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

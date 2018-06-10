@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>SalvarDimensoesCompras</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <name>Financeiro</name>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -41,37 +42,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -125,11 +126,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -207,10 +208,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -273,10 +274,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -349,10 +350,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -401,9 +402,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -414,7 +415,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -427,9 +428,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/05/29 21:08:32.754</created_date>
+    <created_date>2018/06/04 21:06:50.967</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/05/29 21:08:32.754</modified_date>
+    <modified_date>2018/06/04 21:06:50.967</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -444,9 +445,9 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -495,9 +496,9 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -539,67 +540,245 @@
   </connection>
   <order>
     <hop>
-      <from>dFormaPagamento</from>
-      <to>outFormaPagamento</to>
+      <from>DCliente</from>
+      <to>SL Pessoa</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dTipoPagamento </from>
-      <to>outTipoPagamento</to>
+      <from>DFonteRecusrso</from>
+      <to>SL Fonte Recurso</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dPessoaCompra</from>
-      <to>outPessoaCompra</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dProdutoCompras</from>
-      <to>outItem</to>
+      <from>DNaturezaDespesa</from>
+      <to>SL Natureza_despeza</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>DTempo</from>
-      <to>outData</to>
+      <to>SL Tempo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DFormaPagamento</from>
+      <to>SL Forma Pagamento</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputFatoFinanceiro</from>
+      <to>SL Pessoa</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Fonte Recurso</from>
+      <to>SL Tempo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Pessoa</from>
+      <to>SL Forma Pagamento</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Natureza_despeza</from>
+      <to>SL Fonte Recurso</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>FatoCompras</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Forma Pagamento</from>
+      <to>SL Natureza_despeza</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Tempo</from>
+      <to>SL Loja</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DLoja</from>
+      <to>SL Loja</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DSituacao</from>
+      <to>SL Situacao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Loja</from>
+      <to>SL Situacao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SL Situacao</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
+    <name>DCliente</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <sql>select  
+	dky_pessoa,
+	cod_pessoa 
+from dim_pessoa</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DFormaPagamento</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <sql>select  
+	dky_forma_pagamento,
+	cod_forma_pagamento 
+from dim_forma_pagamento</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DLoja</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <sql>select  
+	dky_loja,
+	cod_empresa,
+	cod_loja
+from dim_loja</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DNaturezaDespesa</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <sql>select  
+	dky_natureza_despesa,
+	cod_nat
+from dim_natureza_despesa</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>DTempo</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>ERPDEMO</connection>
+    <connection>DW_ERPDemo</connection>
     <sql>select  
-   cast(to_char( mov.mov_datmov, 'yyyyMMDD') as integer) as cod_data,
-	cast(to_char( mov.mov_datmov, 'yyyy') as integer) as ano,
-	cast(to_char( mov.mov_datmov, 'MM') as integer) as mes,
-	cast(to_char( mov.mov_datmov, 'DD') as integer) as dia,
-	cast(to_char( mov.mov_datmov, 'D') as integer) as dia_semana,
-    mov.mov_datmov  as data
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp
-order by 
-	mov.mov_datmov </sql>
+	dky_tempo,
+	cod_data
+from dim_tempo</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -607,44 +786,33 @@ order by
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>416</yloc>
+      <xloc>656</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>dFormaPagamento</name>
+    <name>DFonteRecusrso</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>ERPDEMO</connection>
+    <connection>DW_ERPDemo</connection>
     <sql>select  
-   distinct
-    mov.mov_forpag, 
-    fpg.fpg_desfpg 
-    
-    
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
+	dky_fonte_recurso,
+    cod_fonte
+from dim_fonte_recurso</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -652,46 +820,159 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>32</yloc>
+      <xloc>544</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>dPessoaCompra</name>
-    <type>TableInput</type>
-    <description/>
+    <name>FatoCompras</name>
+    <type>TableOutput</type>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <schema>public</schema>
+    <table>fato_financeiro</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>dky_tempo</column_name>
+        <stream_name>tempo</stream_name>
+      </field>
+      <field>
+        <column_name>dky_pessoa</column_name>
+        <stream_name>dky_pessoa</stream_name>
+      </field>
+      <field>
+        <column_name>dky_forma_pagamento</column_name>
+        <stream_name>dky_forma_pagamento</stream_name>
+      </field>
+      <field>
+        <column_name>dky_loja</column_name>
+        <stream_name>dky_loja</stream_name>
+      </field>
+      <field>
+        <column_name>valor</column_name>
+        <stream_name>cnt_valpag</stream_name>
+      </field>
+      <field>
+        <column_name>dky_natureza_despesa</column_name>
+        <stream_name>dkyNaturesaDespesa</stream_name>
+      </field>
+      <field>
+        <column_name>dky_fonte_recurso</column_name>
+        <stream_name>dky_fonte_recurso</stream_name>
+      </field>
+      <field>
+        <column_name>dky_situacao</column_name>
+        <stream_name>dky_situacao</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>InputFatoFinanceiro</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
     </partitioning>
     <connection>ERPDEMO</connection>
-    <sql>select  distinct
-    
-    mov.mov_codpes, 
-    
-    pes.pes_codpes, pes.pes_nome,  pes.pes_endere, pes.pes_bairro, pes.pes_cidade, pes.pes_uf, pes.pes_cep
-    
+    <sql>select * from (
+  select 
+    'A' as st, 
+    cnt_codemp, 
+    case when cnt_loja = '' or cnt_loja is null then 'N/A' else cnt_loja end as cnt_loja,  
+    cnt_codpes, 
+    cnt_tipcon, 
+    case when cnt_forpag = '' or cnt_forpag is null then 'N/A' else cnt_forpag end as cnt_forpag, 
+    cnt_valpag,       
+    cast(to_char(cnt_datven, 'yyyyMMDD') as integer) as data_conta,
+    case when cnt_natdesp = '' or cnt_natdesp is null then 'N/A' else cnt_natdesp end as cnt_natdesp, 
+    case when cnt_recurs = '' or cnt_recurs is null then 'N/A' else cnt_recurs end as cnt_recurs 
    
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp
+  from contas  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+      left JOIN empresa on emp_codemp = cnt_codemp
+	where  cnt_datven > '30-12-1899'
+
+  union ALL
+
+  select 
+     'A' as st, 
+    cnt_codemp, 
+     case when cnt_loja = '' or cnt_loja is null then 'N/A' else cnt_loja end as cnt_loja,
+    cnt_codpes, 
+    cnt_tipcon, 
+    case when cnt_forpag = '' or cnt_forpag is null then 'N/A' else cnt_forpag end as cnt_forpag, 
+    cnt_valpag,      
+	cast(to_char(cnt_datpag, 'yyyyMMDD') as integer) as data_conta,
+    case when cnt_natdesp = '' or cnt_natdesp is null then 'N/A' else cnt_natdesp end as cnt_natdesp, 
+    case when cnt_recurs = '' or cnt_recurs is null then 'N/A' else cnt_recurs end as cnt_recurs 
+	
+        
+  from contas_pag  
+      LEFT JOIN pessoa p  on p.pes_codpes = cnt_codpes
+      left join tab_forma_pag fpg on cnt_forpag = fpg.fpg_forpag
+      LEFT JOIN tab_natureza_desp on tnd_codnat = cnt_natdesp
+      LEFT JOIN tab_fonte on cnt_recurs = tfo_codfon
+      LEFT JOIN loja l on cnt_loja = loj_codloj 
+      left JOIN empresa on emp_codemp = cnt_codemp
+	where  cnt_datpag > '30-12-1899'
+  ) T
+  where 
+    cnt_tipcon in ('P', 'R') 
+  order by T.data_conta
+
+
+
+
+
 </sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -699,186 +980,40 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>128</yloc>
+      <xloc>80</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>dProdutoCompras</name>
-    <type>TableInput</type>
-    <description/>
+    <name>SL Forma Pagamento</name>
+    <type>StreamLookup</type>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>ERPDEMO</connection>
-    <sql>select 
-	distinct  
-     imv.imv_item itm_item, 
-	coalesce(itm.itm_descri, 'N/A') itm_descri, 
-	coalesce(itm.itm_unidade, 'N/A') itm_unidade, 
-	coalesce(itm.itm_marca, 'N/A') itm_marca,
-    coalesce(grp.grp_dscgrp, 'N/A') grp_dscgrp
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>48</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>dTipoPagamento </name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ERPDEMO</connection>
-    <sql>select 
-     distinct
-     mov.mov_tippag, 
-    tpg.tpg_destpg
-    
-from item_mov_est imv
-join mov_estoq mov on 
-	mov.mov_empresa = imv.imv_empresa and mov.mov_loja = imv.imv_loja and 
-	mov.mov_undadm = imv.imv_undadm and mov.mov_tipmov = imv.imv_tipmov and mov.mov_nummov = imv.imv_nummov
-join tab_forma_pag fpg on mov.mov_forpag = fpg.fpg_forpag
-join tab_tipo_pag tpg on mov.mov_tippag = tpg.tpg_tippag
-join pessoa pes on mov.mov_codpes = pes.pes_codpes
-left join item itm  on itm.itm_item = imv.imv_item
-left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>48</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>outData</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <from>DFormaPagamento</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>Y</sorted_list>
+    <integer_pair>N</integer_pair>
     <lookup>
-      <schema>public</schema>
-      <table>dim_tempo</table>
       <key>
-        <name>cod_data</name>
-        <field>cod_data</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>ano</name>
-        <field>ano</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>mes</name>
-        <field>mes</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>dia</name>
-        <field>dia</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>dia_semana</name>
-        <field>dia_semana</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>data</name>
-        <field>data</field>
-        <condition>=</condition>
-        <name2/>
+        <name>cnt_forpag</name>
+        <field>cod_forma_pagamento</field>
       </key>
       <value>
-        <name>cod_data</name>
-        <rename>cod_data</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>ano</name>
-        <rename>ano</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>mes</name>
-        <rename>mes</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dia</name>
-        <rename>dia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>dia_semana</name>
-        <rename>dia_semana</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>data</name>
-        <rename>data</rename>
-        <update>Y</update>
+        <name>dky_forma_pagamento</name>
+        <rename>dky_forma_pagamento</rename>
+        <default />
+        <type>None</type>
       </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -886,136 +1021,44 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>416</yloc>
+      <xloc>320</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>outFormaPagamento</name>
-    <type>TableOutput</type>
-    <description/>
+    <name>SL Loja</name>
+    <type>StreamLookup</type>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <schema>public</schema>
-    <table>dim_forma_pagamento</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>cod_forma_pagamento</column_name>
-        <stream_name>mov_forpag</stream_name>
-      </field>
-      <field>
-        <column_name>descricao_forma_pagamento</column_name>
-        <stream_name>fpg_desfpg</stream_name>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>outItem</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <from>DLoja</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
     <lookup>
-      <schema>public</schema>
-      <table>dim_item</table>
       <key>
-        <name>itm_item</name>
-        <field>cod_item</field>
-        <condition>=</condition>
-        <name2/>
+        <name>cnt_codemp</name>
+        <field>cod_empresa</field>
       </key>
       <key>
-        <name>itm_descri</name>
-        <field>descricao_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>grp_dscgrp</name>
-        <field>grupo_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>itm_marca</name>
-        <field>marca_item</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>itm_unidade</name>
-        <field>um_item</field>
-        <condition>=</condition>
-        <name2/>
+        <name>cnt_loja</name>
+        <field>cod_loja</field>
       </key>
       <value>
-        <name>cod_item</name>
-        <rename>itm_item</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>descricao_item</name>
-        <rename>itm_descri</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>um_item</name>
-        <rename>itm_unidade</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>marca_item</name>
-        <rename>itm_marca</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>grupo_item</name>
-        <rename>grp_dscgrp</rename>
-        <update>Y</update>
+        <name>dky_loja</name>
+        <rename>dky_loja</rename>
+        <default />
+        <type>None</type>
       </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1023,107 +1066,40 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>320</yloc>
+      <xloc>736</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>outPessoaCompra</name>
-    <type>InsertUpdate</type>
-    <description/>
+    <name>SL Pessoa</name>
+    <type>StreamLookup</type>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <from>DCliente</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
     <lookup>
-      <schema>public</schema>
-      <table>dim_pessoa</table>
       <key>
-        <name>mov_codpes</name>
+        <name>cnt_codpes</name>
         <field>cod_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_bairro</name>
-        <field>bairro_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_cep</name>
-        <field>cep_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_cidade</name>
-        <field>cidade_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_endere</name>
-        <field>endereco_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_nome</name>
-        <field>nome_pessoa</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pes_nome</name>
-        <field>uf_pessoa</field>
-        <condition>=</condition>
-        <name2/>
       </key>
       <value>
-        <name>cod_pessoa</name>
-        <rename>pes_codpes</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>nome_pessoa</name>
-        <rename>pes_nome</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>endereco_pessoa</name>
-        <rename>pes_endere</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>bairro_pessoa</name>
-        <rename>pes_bairro</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cidade_pessoa</name>
-        <rename>pes_cidade</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>uf_pessoa</name>
-        <rename>pes_uf</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>cep_pessoa</name>
-        <rename>pes_cep</rename>
-        <update>Y</update>
+        <name>dky_pessoa</name>
+        <rename>dky_pessoa</rename>
+        <default />
+        <type>None</type>
       </value>
     </lookup>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1131,50 +1107,40 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>128</yloc>
+      <xloc>208</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>outTipoPagamento</name>
-    <type>TableOutput</type>
-    <description/>
+    <name>SL Natureza_despeza</name>
+    <type>StreamLookup</type>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <connection>DW_ERPDemo</connection>
-    <schema>public</schema>
-    <table>dim_tipo_pagamento</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>cod_tipo_pagamento</column_name>
-        <stream_name>mov_tippag</stream_name>
-      </field>
-      <field>
-        <column_name>descricao_tipo_pagamento</column_name>
-        <stream_name>tpg_destpg</stream_name>
-      </field>
-    </fields>
-    <cluster_schema/>
+    <from>DNaturezaDespesa</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>cnt_natdesp</name>
+        <field>cod_nat</field>
+      </key>
+      <value>
+        <name>dky_natureza_despesa</name>
+        <rename>dkyNaturesaDespesa</rename>
+        <default />
+        <type>None</type>
+      </value>
+    </lookup>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1182,8 +1148,229 @@ left join tab_grupo grp on itm.itm_grupo =  grp.grp_codgrp</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>224</yloc>
+      <xloc>432</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SL Tempo</name>
+    <type>StreamLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <from>DTempo</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>data_conta</name>
+        <field>cod_data</field>
+      </key>
+      <value>
+        <name>dky_tempo</name>
+        <rename>tempo</rename>
+        <default />
+        <type>None</type>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SL Fonte Recurso</name>
+    <type>StreamLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <from>DFonteRecusrso</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>cnt_recurs</name>
+        <field>cod_fonte</field>
+      </key>
+      <value>
+        <name>dky_fonte_recurso</name>
+        <rename>dky_fonte_recurso</rename>
+        <default />
+        <type>None</type>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>cnt_valpag</name>
+        <rename />
+      </field>
+      <field>
+        <name>dky_pessoa</name>
+        <rename />
+      </field>
+      <field>
+        <name>dky_forma_pagamento</name>
+        <rename />
+      </field>
+      <field>
+        <name>dkyNaturesaDespesa</name>
+        <rename />
+      </field>
+      <field>
+        <name>dky_fonte_recurso</name>
+        <rename />
+      </field>
+      <field>
+        <name>dky_loja</name>
+        <rename />
+      </field>
+      <field>
+        <name>dky_situacao</name>
+        <rename />
+      </field>
+      <field>
+        <name>tempo</name>
+        <rename />
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DSituacao</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>DW_ERPDemo</connection>
+    <sql>select  
+	dky_situacao,
+	tipo,
+	situacao
+from dim_situacao</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SL Situacao</name>
+    <type>StreamLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <from>DSituacao</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>st</name>
+        <field>situacao</field>
+      </key>
+      <key>
+        <name>cnt_tipcon</name>
+        <field>tipo</field>
+      </key>
+      <value>
+        <name>dky_situacao</name>
+        <rename>dky_situacao</rename>
+        <default />
+        <type>None</type>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
